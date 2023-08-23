@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  @include text-base;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, #FFF 0, #FFF 50%, $color-primary 50%, $color-primary 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+input {
+  border: 1px solid $color-border;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
