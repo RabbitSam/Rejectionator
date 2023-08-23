@@ -1,127 +1,149 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0px;
-  min-height: 100vh;
-  
-  .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: white;
-    border: 1px solid $color-border;
-    width: 95vw;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 8px 8px 4px rgba(black, 25%);
-
-    .logo {
-      width: 60%;
-      height: auto;
-    }
-
-    .tagline {
-      padding-bottom: 5px;
-      margin-bottom: 5px;
-      border-bottom: 1px solid $color-border;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-
-      input {
-        width: 100%;
-        margin-top: 5px;
-      }
-
-      .select {
-        margin-top: 5px;
-        &:hover {
-          cursor:text;
-        }
-      }
-
-      .preview {
+    padding: 10px 0px;
+    min-height: 100vh;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
         border: 1px solid $color-border;
-        border-radius: 5px;
-        padding: 5px;
-
-        * {
-          @include text-sm;
-        }
-
-        .subject {
-          margin-bottom: 5px;
-          padding-bottom: 5px;
-          border-bottom: 1px solid $color-border;
-        }
-
-        div > p {
-          padding: 5px 0px;
-        }
-      }
-
-      button[type=submit] {
-        background-color: $color-primary;
-        color: white;
-        border: none;
+        width: 95vw;
         padding: 10px;
-        font-weight: bold;
         border-radius: 5px;
-        &:hover, &:active {
-          background-color: white;
-          border: 1px solid $color-primary;
-          color: $color-primary;
-          cursor: pointer;
+        box-shadow: 8px 8px 4px rgba(black, 25%);
+
+        .logo {
+            width: 60%;
+            height: auto;
         }
-      }
-    }
 
-    small {
-      @include text-xs;
+        .tagline {
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid $color-border;
+        }
 
-      & > * {
-        @include text-xs;
-      }
-    }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
 
-    & > :last-child {
-      margin-top: 20px;
-      place-self: start;
+            input {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .select {
+                margin-top: 5px;
+                &:hover {
+                    cursor:text;
+                }
+            }
+
+            .preview {
+                border: 1px solid $color-border;
+                border-radius: 5px;
+                padding: 5px;
+
+                * {
+                    @include text-sm;
+                }
+
+                .subject {
+                    margin-bottom: 5px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid $color-border;
+                }
+
+                div > p {
+                    padding: 5px 0px;
+                }
+            }
+
+            button[type=submit] {
+                background-color: $color-primary;
+                color: white;
+                border: none;
+                padding: 10px;
+                border: 1px solid $color-primary;
+                font-weight: bold;
+                border-radius: 5px;
+                &:hover, &:active {
+                    background-color: white;
+                    color: $color-primary;
+                    cursor: pointer;
+                }
+
+                &:disabled {
+                    color: lightgray;
+                    background-color: darken($color-primary, 40%);
+                    border-color: darken($color-primary, 40%);
+                    animation: loading 2s ease-in-out infinite;
+                    &:hover {
+                        cursor: default;
+                        padding: 11px;
+                        border: none;
+                    }
+                }
+            }
+        }
+
+        & > :last-child {
+            margin-top: 20px;
+            place-self: start;
+        }
     }
-  }
 }
 
 @media (min-width: $md) {
-  .main {
-    justify-content: center;
-    align-items: center;
-    .container {
-      width: 60vw;
+    .main {
+        justify-content: center;
+        align-items: center;
+        .container {
+            width: 60vw;
+        }
     }
-  }
 }
 
 @media (min-width: $lg) {
-  .main {
-    justify-content: center;
-    align-items: center;
-    .container {
-      width: 40vw;
+    .main {
+        justify-content: center;
+        align-items: center;
+        .container {
+            width: 40vw;
 
-      & > :last-child {
-        place-self: end;
-      }
-    }
+            & > :last-child {
+                place-self: end;
+            }
+        }
 
-    form button[type=submit] {
-      width: 20%;
-      place-self: end;
+        form button[type=submit] {
+            width: 20%;
+            place-self: end;
+        }
     }
-  }
+}
+
+.error {
+    color: $color-danger;
+}
+
+.success {
+    color: $color-success;
+}
+
+@keyframes loading {
+    0%, 100% {
+        color: white;
+    }
+    
+    50% {
+        color: gray;
+    }
 }

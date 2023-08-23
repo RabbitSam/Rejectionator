@@ -5,22 +5,21 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Rejectionator | Get Rejecting',
-  description: "Reject your applicants in a single form! It can't get easier!"
-  
+    title: 'Rejectionator | Get Rejecting',
+    description: "Reject your applicants in a single form! It can't get easier!"
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes='any'/>
-      </head>
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+    return (
+        <html lang="en">
+            <head>
+                <link rel="icon" href="/favicon.ico" sizes='any'/>
+            </head>
+            <body className={inter.className}>{children}</body>
+        </html>
+    )
 }
